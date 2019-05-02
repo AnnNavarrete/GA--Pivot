@@ -8,9 +8,9 @@ provider:
   region: "ap-southeast-2"
 
 functions:
-  currentTime:
+  bankStatement:
     handler: handler.endpoint
     events:
       - http:
-          path: ping
+          path: bankstatement
           method: get
