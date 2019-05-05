@@ -53,6 +53,8 @@ get '/users/home' do
     }
   }
 
+  @bank_balance = @account_codes.map { |account| account[:amount] }.sum
+
   @user = current_user
   erb :'/users/home'
 end

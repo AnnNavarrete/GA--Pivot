@@ -61,7 +61,7 @@ INSERT INTO chart_of_accounts(name, account_code_id) VALUES ('Housing', 2);
 INSERT INTO chart_of_accounts(name, account_code_id) VALUES ('Utilities', 2);
 INSERT INTO chart_of_accounts(name, account_code_id) VALUES ('Transport', 2);
 INSERT INTO chart_of_accounts(name, account_code_id) VALUES ('Groceries', 2);
-INSERT INTO chart_of_accounts(name, account_code_id) VALUES ('Night_out_out', 2);
-INSERT INTO chart_of_accounts(name, account_code_id) VALUES ('Scuba_shark_attack', 2);
-INSERT INTO chart_of_accounts(name, account_code_id) VALUES ('School fees', 2);
-
+INSERT INTO chart_of_accounts(name, account_code_id) VALUES ('Night Out Out', 2);
+INSERT INTO chart_of_accounts(name, account_code_id) VALUES ('Scuba Shark Attack', 2);
+INSERT INTO chart_of_accounts(name, account_code_id) VALUES ('School Fees', 2);
+INSERT INTO chart_of_accounts(name, account_code_id) VALUES ('Entertainment', 2);
