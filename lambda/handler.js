@@ -1,49 +1,63 @@
 "use strict";
 
+var randomSelect = function(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+};
+var randomDescription = function(amount) {
+  var adjective = [
+    "dancing",
+    "partying",
+    "sleeping",
+    "playing with otters",
+    "scuba diving with the sharks",
+    "drinking alone",
+    "running away",
+    "swimming quickly",
+    "singing badly",
+    "wearing nothing"
+  ];
+  var noun = [
+    "under the ocean",
+    "to pay the rent",
+    "in Mexico",
+    "near Geelong",
+    "as an instagram model",
+    "because I'm secretly a mermaid",
+    "while riding a dolphin",
+    "and then bungy jumping into the abyss",
+    "to finish my GA course",
+    "because why not"
+  ];
+
+  return `${amount >= 0 ? "Income for" : "Expenses from"} ${randomSelect(
+    adjective
+  )} ${randomSelect(noun)}`;
+};
+
+var randomAmount = function(max) {
+  return Math.ceil(Math.random() * max * (Math.random() > 0.5 ? -1 : +1));
+};
+
+var randomDate = function(start, end) {
+  return new Date(
+    start.getTime() + Math.random() * (end.getTime() - start.getTime())
+  )
+    .toLocaleString()
+    .slice(0, 10);
+};
+
 var bankStatement = function() {
+  var items = [];
+  for (var i = 0; i < 8; i++) {
+    var amount = randomAmount(23456);
+    items.push({
+      date: randomDate(new Date(2012, 0, 1), new Date()),
+      description: randomDescription(amount),
+      amount
+    });
+  }
   return {
-    items: [
-      {
-        date: "2019-05-01",
-        description: "Income from dancing",
-        amount: 10567.21
-      },
-      {
-        date: "2019-04-01",
-        description: "Monthly Rent",
-        amount: -1789.06
-      },
-      {
-        date: "2019-04-04",
-        description: "Birthday Lonesome Drinks",
-        amount: -423.54
-      },
-      {
-        date: "2019-04-10",
-        description: "General Assembly Fees",
-        amount: -15500
-      },
-      {
-        date: "2019-04-01",
-        description: "Sale of shares to Zuck my bird",
-        amount: 25675.9
-      },
-      {
-        date: "2019-04-15",
-        description: "Monthly otter survival kit cost",
-        amount: -342.56
-      },
-      {
-        date: "2019-04-01",
-        description: "Sale of shares to Zuck my bird",
-        amount: 25675.9
-      },
-      {
-        date: "2019-04-15",
-        description: "Monthly otter survival kit cost",
-        amount: -342.56
-      }
-    ]
+    items
   };
 };
 
