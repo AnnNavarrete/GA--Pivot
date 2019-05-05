@@ -9,6 +9,11 @@ var bankStatement = function() {
         amount: 10567.21
       },
       {
+        date: "2019-04-01",
+        description: "Monthly Rent",
+        amount: -1789.06
+      },
+      {
         date: "2019-04-04",
         description: "Birthday Lonesome Drinks",
         amount: -423.54
@@ -17,6 +22,16 @@ var bankStatement = function() {
         date: "2019-04-10",
         description: "General Assembly Fees",
         amount: -15500
+      },
+      {
+        date: "2019-04-01",
+        description: "Sale of shares to Zuck my bird",
+        amount: 25675.9
+      },
+      {
+        date: "2019-04-15",
+        description: "Monthly otter survival kit cost",
+        amount: -342.56
       },
       {
         date: "2019-04-01",

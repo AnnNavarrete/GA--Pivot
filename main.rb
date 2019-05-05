@@ -2,14 +2,16 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'pry'
 
+require_relative 'app_console'
 require_relative 'db_config'
 require_relative 'models/user'
+require_relative 'models/ledger'
+require_relative 'models/chart_of_account'
+require_relative 'models/account_code'
 require_relative 'dashboard'
-# require 'models/ledger'
-# require 'models/app_console'
+
 
 enable :sessions
-
 helpers do
   def current_user
     User.find_by(id: session[:user_id])
@@ -20,14 +22,9 @@ helpers do
   end
 end
 
-
 # Application Controller
 get '/' do
   erb :index
-end
-
-get '/dashboard' do
-  erb :dashboard
 end
 
 get '/registrations/signup' do
@@ -50,9 +47,9 @@ get '/sessions/login' do
 end
 
 post '/sessions/login' do
-  user = User.find_by(email: params[:email])
-  if user && user.authenticate(params[:password])
-    session[:user_id] = user.id
+  @user = User.find_by(email: params[:email])
+  if @user && @user.authenticate(params[:password])
+    session[:user_id] = @user.id
     redirect '/users/home'
   else
     erb :'/sessions/login'
@@ -78,19 +75,12 @@ put '/users/:id' do
   redirect '/users/home'
 end
 
-get '/users/home' do
- # route is responsible for rendering the user's homepage view
- if current_user == nil
-  redirect '/sessions/login'
- end
- @user = current_user
- erb :'/users/home'
-end
-
 get '/sessions/logout' do
   session.clear
   redirect '/'
 end
+
+
 
 
 

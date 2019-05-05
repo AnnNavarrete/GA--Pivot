@@ -3,15 +3,31 @@
 <thead>
   <th>date</th>
   <th>description</th>
-  <th>amount</th>
+  <th>amount</th> 
+  <th></th>
 </thead>
 <tbody>
 <% @items.each do |item| %>
   <tr>
-  <td><%= item[:date] %></td>
-  <td><%= item[:description] %></td>
-  <td><%= item[:amount] %></td>
+    <td><%= item[:date] %></td>
+    <td><%= item[:description] %></td>
+    <td><%= item[:amount] %></td>
+    <td>
+      <form action="/bankstatement" method="post">
+        <input type="hidden" name="date" value="<%= item[:date] %>">
+        <input type="hidden" name="description" value="<%= item[:description] %>">
+        <input type="hidden" name="amount" value="<%= item[:amount] %>">
+        <select name="chart_of_account_id">
+        <% @chart_of_accounts.each do |account|%>
+          <option value="<%= account.id %>"><%=account.name%></option>
+        <%end%>
+        </select>
+        <button type="submit">submit</button>
+      </form>
+    </td>
   </tr>
   <% end %>
 </tbody>
-</table>
+</table> 
+
+

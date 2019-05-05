@@ -1,0 +1,8 @@
+<%= @account_name %>
+<% @account.chart_of_accounts.each do |chart| %>
+<% next if chart.ledgers.length == 0 %>
+   <h4><%= chart.name %></h4>
+   <% chart.ledgers.each do |item| %>
+     <h4><%= item.description %> (<%= item.amount %>)</h4>
+   <% end %>
+<% end %>
