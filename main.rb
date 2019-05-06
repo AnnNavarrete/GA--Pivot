@@ -1,6 +1,4 @@
 require 'sinatra'
-require 'sinatra/reloader'
-require 'pry'
 
 require_relative 'app_console'
 require_relative 'db_config'

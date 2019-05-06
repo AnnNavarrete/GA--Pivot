@@ -1,5 +1,4 @@
 require 'httparty'
-require 'pry'
 require_relative 'models/ledger'
 require_relative 'models/chart_of_account'
 require_relative 'models/account_code'
