@@ -1,11 +1,13 @@
-<h1>Profile Information</h1>
-<form action="/users/<%= @user.id %>" method="post">
-<input type="hidden" name="_method" value="put">
-<label for="">Name</label>
-<input type="text" name="name" value="<%= @user.name %>">
-<label for="">Email</label>
-<input type="text" name="email" value="<%= @user.email %>">
-<label for="">Password</label>
-<input type="password" name="password" value="<%= @user.password %>">
-<button>Update</button>
-</form>
+<body class="settings-info">
+  <h1>Profile Information</h1>
+  <form action="/users/<%= @user.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="">Name</label>
+  <input type="text" name="name" value="<%= @user.name %>">
+  <label for="">Email</label>
+  <input type="text" name="email" value="<%= @user.email %>">
+  <label for="">Password</label>
+  <input type="password" name="password" value="<%= @user.password %>">
+  <button>Update</button>
+  </form>
+</body>

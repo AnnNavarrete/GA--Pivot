@@ -13,7 +13,7 @@
 <div class="account-codes">
 <% @account_codes.each do |account| %>
   <a href="/user/account/<%= account[:name] %>">
-    <h3><%= account[:name] %>: (<%= account[:amount] %>)</h3>
+    <h3><%= account[:name] %>: <%= account[:amount] %></h3>
   </a>
 <% end %>
 </div>

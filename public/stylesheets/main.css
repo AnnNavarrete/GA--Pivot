@@ -125,3 +125,21 @@ h3 {
   text-align: left;
   padding: 3rem;
 }
+
+.settings-info {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #c0cfea;
+  text-align: center;
+  padding: 10rem;
+  color: grey;
+  font-size: 1.8rem;
+}
+
+.accounts {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #c0cfea;
+  text-align: left;
+  padding: 3rem;
+  color: grey;
+  font-size: 1.8rem;
+}

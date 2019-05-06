@@ -1,7 +1,5 @@
 --CREATE DATABASE apportion;
 
---CREATE DATABASE apportion;
-
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS account_codes CASCADE;
 DROP TABLE IF EXISTS chart_of_accounts CASCADE;
