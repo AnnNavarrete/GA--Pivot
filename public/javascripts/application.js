@@ -1,5 +1,5 @@
 class LineItem extends React.Component {
-  // constructor is called when the class is created
+  // constructor is a method thats get auto called when the class is created
   // props = class object
   constructor(props) {
     super(props);
@@ -59,6 +59,7 @@ class App extends React.Component {
     bankstatement: { items: [] }
   };
 
+  // the process of creating an element and embedding it in a DOM
   // componentDidMount is called by react when the component is mounted
   // to the virtual DOM and before render is called
   // it's a good place to do API requests
