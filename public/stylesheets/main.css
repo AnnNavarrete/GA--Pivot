@@ -1,4 +1,4 @@
-body {
+.homepage {
   background-image: url(https://www.tfhawaii.org/wordpress/wp-content/uploads/2018/12/paper-3190198__340.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -45,4 +45,83 @@ body {
   .header-right {
     float: none;
   }
+}
+
+h1 {
+  color: grey;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.login {
+  background-color: #c0cfea;
+  text-align: center;
+  padding: 10rem;
+  color: grey;
+  font-size: 2rem;
+}
+
+.sign-up {
+  background-color: #c0cfea;
+  text-align: center;
+  padding: 10rem;
+  color: grey;
+  font-size: 1.8rem;
+}
+
+.user-homepage {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #c0cfea;
+  text-align: center;
+  color: grey;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.header-user {
+  overflow: hidden;
+  background-color: white;
+}
+
+.header-user a {
+  float: right;
+  color: grey;
+  text-align: center;
+  padding: 40px;
+  text-decoration: none;
+  font-size: 23px;
+  line-height: 25px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.header-user a:hover {
+  background-color: grey;
+  color: lightgrey;
+}
+
+.account-codes {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+h3 {
+  background-color: #dfcbf0;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10%;
+}
+
+.bank-rec {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #c0cfea;
+  text-align: center;
+  color: grey;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.statement {
+  text-align: left;
+  padding: 3rem;
 }

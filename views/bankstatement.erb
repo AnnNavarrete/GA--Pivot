@@ -1,11 +1,15 @@
+<body class="bank-rec">
 <h1>Bank Statement</h1>
-<a href="/users/home"><h2>Back to Dashboard</h2></a>
+<div class="statement">
 <div id="app"></div>
 <script>
 window.chartOfAccounts = <%= @chart_of_accounts.to_json %>  
 </script>
 <script type="text/babel" src="/javascripts/application.js">
 </script>
+</div>
+<h3><a href="/users/home">Back to Dashboard</a></h3>
+</body>
 
 
 
