@@ -1,6 +1,6 @@
 # Apportion: Finance Tracker
 
-A simple app created to help track your finances: https://pages.git.generalassemb.ly/AnnNavarrete/Tic-Tac-Toe/
+A simple app created to help track your finances: https://apportion8.herokuapp.com/
 
 ## Getting Started
 
