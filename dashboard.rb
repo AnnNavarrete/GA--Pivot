@@ -68,10 +68,6 @@ end
 
 
 
-
-
-
-
 #  create a Ledgers class OOP
 #  ---
 #  loop through the array of statement line items
