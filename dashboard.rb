@@ -1,4 +1,5 @@
 require 'httparty'
+require 'json'
 require_relative 'models/ledger'
 require_relative 'models/chart_of_account'
 require_relative 'models/account_code'
@@ -66,14 +67,4 @@ end
 
 
 
-
-
-#  create a Ledgers class OOP
-#  ---
-#  loop through the array of statement line items
-#    - for each line item, create a corresponding Ledger object
-#    - set 'user_id' to current_user id
-#    - if Amount is positive, give the Ledger 'account_code_id' to be 1 (ID for 'income')
-#    - else, 'account_code_id' to be 2
-#    - save the Ledger object
 

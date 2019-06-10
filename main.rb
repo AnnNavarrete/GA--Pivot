@@ -1,4 +1,6 @@
 require 'sinatra'
+require 'sinatra/json'
+require 'sinatra/reloader'
 
 require_relative 'app_console'
 require_relative 'db_config'
@@ -8,9 +10,14 @@ require_relative 'models/chart_of_account'
 require_relative 'models/account_code'
 require_relative 'dashboard'
 
-
 enable :sessions
 helpers do
+  def static_file(name)
+    json_from_file = File.read("public/build/asset-manifest.json")
+    hash = JSON.parse(json_from_file)
+    hash[name]
+  end
+
   def current_user
     User.find_by(id: session[:user_id])
   end
@@ -78,8 +85,9 @@ get '/sessions/logout' do
   redirect '/'
 end
 
-
-
+get '/api/todos' do
+  json :message => static_file 
+end
 
 
 

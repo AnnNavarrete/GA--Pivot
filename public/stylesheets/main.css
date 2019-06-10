@@ -143,3 +143,16 @@ h3 {
   color: grey;
   font-size: 1.8rem;
 }
+
+.header-logo a {
+  float: left;
+  color: grey;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 23px;
+  line-height: 25px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
