@@ -65,6 +65,27 @@ get '/user/account/:name' do
   erb :'/users/account_info'
 end
 
+get '/api/accounts/:name' do
+  content_type :json
+
+  account_name = params[:name].titlecase
+  account = AccountCode.find_by(name: params[:name])
+  accounts = account.chart_of_accounts.map { |account| 
+    {
+      name: account.name,
+      items: account.ledgers.where(user_id: current_user.id),
+      total: account.ledgers.where(user_id: current_user.id).sum(:amount)
+    }
+  }
+
+  data = {
+    :name => account_name,
+    :accounts => accounts
+  }
+
+  json data.as_json
+end
+
 
 
 

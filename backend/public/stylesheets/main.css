@@ -1,50 +1,29 @@
-.homepage {
-  background-image: url(https://www.tfhawaii.org/wordpress/wp-content/uploads/2018/12/paper-3190198__340.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: "Montserrat Alternates", sans-serif;
-  margin: 0;
+header {
+  text-align: justify;
+  color: #fff;
 }
 
-.header {
-  overflow: hidden;
-  background-color: white;
+header::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
 }
-
-.header a {
-  float: left;
-  color: grey;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 23px;
-  line-height: 25px;
-  border-radius: 4px;
-  font-weight: bold;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
-
-.header a:hover {
-  background-color: grey;
-  color: lightgrey;
-}
-
-.header-right {
-  float: right;
-  width: 200px;
-  padding: 50px;
+header img,
+header nav {
+  display: inline-block;
   vertical-align: middle;
+  text-align: left;
+  color: solid #516fca;
+  font-family: "Special Elite", cursive;
+  font-size: 1.5rem;
 }
 
-@media screen and (max-width: 500px) {
-  .header a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .header-right {
-    float: none;
-  }
+header nav {
+  margin-right: 2rem;
+}
+
+header nav a:hover {
+  background-color: #92e0e1;
 }
 
 h1 {

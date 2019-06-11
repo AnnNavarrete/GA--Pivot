@@ -1,0 +1,20 @@
+<header>
+  <img src="/images/logo.png"/>
+  <nav class="header-right">
+    <a href="/users/home">Home</a>
+    <a href="/users/settings">Settings</a>
+    <a href="/sessions/logout">Log Out</a>
+  </nav>
+</header>
+<h1>Bank Statement</h1>
+<div class="statement">
+  <div id="app"></div>
+  <script>
+    window.chartOfAccounts = <%= @chart_of_accounts.to_json %>
+  </script>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script type="text/babel" src="/javascripts/application.js"></script>
+</div>
+<h3><a href="/users/home">Back to Dashboard</a></h3>
