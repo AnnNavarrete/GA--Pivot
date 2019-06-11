@@ -1,5 +1,6 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
+import "chartjs-plugin-colorschemes";
 
 export default class Chart extends React.Component {
   constructor(props) {
@@ -11,10 +12,28 @@ export default class Chart extends React.Component {
             data: [10, 20, 30, 40, 5]
           }
         ],
-        labels: ["House", "Food", "Utilities", "Entertainment", "Transport"],
-        backgroundColor: ["255,0,0"]
+        labels: ["House", "Food", "Utilities", "Entertainment", "Transport"]
       }
     };
+  }
+
+  async componentDidMount() {
+    const url = `/api/accounts/${this.props.chartType}`;
+    const res = await fetch(url);
+    const body = await res.json();
+    const labels = body.accounts.map(account => account.name);
+    const data = body.accounts.map(account => account.total);
+    this.setState({
+      data: {
+        labels,
+        datasets: [
+          {
+            data
+          }
+        ]
+      }
+    });
+    console.log(body);
   }
 
   render() {
@@ -23,7 +42,12 @@ export default class Chart extends React.Component {
         <Pie
           data={this.state.data}
           options={{
-            maintainAspectRatio: false
+            legend: { display: false },
+            plugins: {
+              colorschemes: {
+                scheme: "brewer.Paired12"
+              }
+            }
           }}
         />
       </div>

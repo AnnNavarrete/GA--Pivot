@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/json'
 require 'sinatra/reloader'
+require "sinatra/cors"
 
 require_relative 'app_console'
 require_relative 'db_config'
@@ -9,6 +10,11 @@ require_relative 'models/ledger'
 require_relative 'models/chart_of_account'
 require_relative 'models/account_code'
 require_relative 'dashboard'
+
+set :allow_origin, "*"
+set :allow_methods, "GET,HEAD,POST"
+set :allow_headers, "content-type,if-modified-since"
+set :expose_headers, "location,link"
 
 enable :sessions
 helpers do
@@ -19,7 +25,7 @@ helpers do
   end
 
   def current_user
-    User.find_by(id: session[:user_id])
+    User.find_by(id: 1)
   end
 
   def logged_in

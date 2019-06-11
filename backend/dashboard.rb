@@ -7,7 +7,8 @@ require_relative 'models/account_code'
 enable :sessions
 helpers do
   def current_user
-    User.find_by(id: session[:user_id])
+    User.find_by(id: 1)
+    # session[:user_id]
   end
 
   def logged_in
@@ -83,6 +84,16 @@ get '/api/accounts/:name' do
     :accounts => accounts
   }
 
+  json data.as_json
+end
+
+get '/api/accounts' do
+  data = {
+    :user => "annie",
+    :bank_balance => 1000,
+    :income => 1000,
+    :expenses => 500
+  }
   json data.as_json
 end
 

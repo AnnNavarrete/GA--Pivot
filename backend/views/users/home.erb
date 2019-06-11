@@ -6,14 +6,5 @@
   </nav>
 </header>
 <div id="root">Root</div>
-<h1>"Welcome to your Dashboard, <%= @user.name %>!"</h1>
-<h3>Bank Balance: <%= @bank_balance %> </h3>
-<div class="account-codes">
-  <% @account_codes.each do |account| %>
-    <a href="/user/account/<%= account[:name] %>">
-      <h3><%= account[:name] %>: <%= account[:amount] %></h3>
-    </a>
-  <% end %>
-  <h3><a href="/bankstatement">Reconcile Bank Statement</a></h3>
-  <script src="/javascripts/main.js"></script>
+<script src="/javascripts/main.js"></script>
 </body>
