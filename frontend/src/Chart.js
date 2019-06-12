@@ -9,7 +9,7 @@ export default class Chart extends React.Component {
       data: {
         datasets: [
           {
-            data: [10, 20, 30, 40, 5]
+            data: [10, 20, 30, 40, 50]
           }
         ],
         labels: ["House", "Food", "Utilities", "Entertainment", "Transport"]

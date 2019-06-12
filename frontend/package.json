@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "node ./scripts/non-split-build.js && mv build/static/js/main.js ../public/javascripts/",
+    "build": "node ./scripts/non-split-build.js && mv build/static/js/frontend.js ../backend/public/javascripts/ && mv build/static/css/frontend.css ../backend/public/stylesheets/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

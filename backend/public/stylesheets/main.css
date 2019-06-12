@@ -82,14 +82,25 @@ h1 {
 .account-codes {
   display: flex;
   justify-content: space-evenly;
+  width: 100%;
+  padding: 2rem;
 }
 
-h3 {
+.chart-container {
+  width: 70%;
+}
+
+.main-accounts {
+  flex-direction: row;
+  width: 25%;
+}
+
+/* h3 {
   background-color: #dfcbf0;
   margin: 1rem;
   padding: 1rem;
   border-radius: 10%;
-}
+} */
 
 .bank-rec {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;

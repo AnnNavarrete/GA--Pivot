@@ -22,8 +22,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>"Welcome to your Dashboard, {this.state.user}"</h1>
-        <h3>Bank Balance: {this.state.bank_balance} </h3>
+        <h1>"Welcome to your finance tracker, {this.state.user}"</h1>
         <div class="account-codes">
           <div class="chart-container">
             <div class="account-box">
@@ -39,9 +38,11 @@ class App extends React.Component {
               <Chart chartType="Expenses" />
             </div>
           </div>
-          <h3>
-            <a href="/bankstatement">Reconcile Bank Statement</a>
-          </h3>
+          <div class="main-accounts">
+            <span>Bank Balance: {this.state.bank_balance} </span>
+            <span href="/bankstatement">Reconcile Bank Statement</span>
+            <span>Create/View Budget</span>
+          </div>
         </div>
       </div>
     );
