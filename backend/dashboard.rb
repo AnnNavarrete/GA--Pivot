@@ -1,5 +1,6 @@
 require 'httparty'
 require 'json'
+require 'pry'
 require_relative 'models/ledger'
 require_relative 'models/chart_of_account'
 require_relative 'models/account_code'
@@ -7,8 +8,7 @@ require_relative 'models/account_code'
 enable :sessions
 helpers do
   def current_user
-    User.find_by(id: 1)
-    # session[:user_id]
+    User.find_by(id: session[:user_id])
   end
 
   def logged_in
@@ -30,12 +30,13 @@ get '/bankstatement' do
 end
 
 post '/bankstatement' do
+  payload = JSON.parse(request.body.read.to_s, :symbolize_names => true)
   ledger = Ledger.new
-  ledger.date = params[:date]
-  ledger.description = params[:description]
-  ledger.amount = params[:amount]
+  ledger.date = payload[:date]
+  ledger.description = payload[:description]
+  ledger.amount = payload[:amount]
   ledger.user_id = session[:user_id]
-  ledger.chart_of_account_id = params[:chart_of_account_id]
+  ledger.chart_of_account_id = payload[:chart_of_account_id]
   ledger.save
   redirect '/bankstatement'
 end
@@ -88,11 +89,22 @@ get '/api/accounts/:name' do
 end
 
 get '/api/accounts' do
+  account_codes = AccountCode.all.map { |account| 
+    {
+      name: account.name,
+      amount: account.chart_of_accounts.map { |chart| 
+        chart.ledgers.where(user_id: current_user.id).sum(:amount)
+      }.sum
+    }
+  }
+
+  bank_balance = account_codes.map { |account| account[:amount] }.sum.round(2)
+  
   data = {
-    :user => "annie",
-    :bank_balance => 1000,
-    :income => 1000,
-    :expenses => 500
+    :user => current_user.name,
+    :bank_balance => bank_balance,
+    :accountCodes => account_codes,
+    :chartOfAccounts => ChartOfAccount.all
   }
   json data.as_json
 end

@@ -91,16 +91,11 @@ h1 {
 }
 
 .main-accounts {
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
   width: 25%;
+  background-color: grey;
 }
-
-/* h3 {
-  background-color: #dfcbf0;
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 10%;
-} */
 
 .bank-rec {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;

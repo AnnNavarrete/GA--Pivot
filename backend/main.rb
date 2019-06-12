@@ -17,6 +17,10 @@ set :allow_headers, "content-type,if-modified-since"
 set :expose_headers, "location,link"
 
 enable :sessions
+before "*" do
+  session[:user_id] = 1
+end
+
 helpers do
   def static_file(name)
     json_from_file = File.read("public/build/asset-manifest.json")
@@ -25,7 +29,8 @@ helpers do
   end
 
   def current_user
-    User.find_by(id: 1)
+    
+    User.find_by(id: session[:user_id])
   end
 
   def logged_in
@@ -93,6 +98,10 @@ end
 
 get '/api/todos' do
   json :message => static_file 
+end
+
+get '*' do
+  erb :'/users/home'
 end
 
 
