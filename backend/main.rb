@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'sinatra/json'
-require 'sinatra/reloader'
 require "sinatra/cors"
 
 require_relative 'app_console'
