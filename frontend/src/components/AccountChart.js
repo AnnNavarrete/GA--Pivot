@@ -1,5 +1,5 @@
 import React from "react";
-import Chart from "../components/Chart";
+import BarChart from "./BarChart";
 import { Link } from "react-router-dom";
 
 export default class AccountChart extends React.Component {
@@ -9,7 +9,7 @@ export default class AccountChart extends React.Component {
         <Link to={`/user/account/${account.name}`}>
           {account.name}: {account.amount}
         </Link>
-        <Chart chartType={account.name} />
+        <BarChart chartType={account.name} />
       </div>
     ));
   }

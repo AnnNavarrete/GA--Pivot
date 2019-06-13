@@ -1,20 +1,22 @@
+body {
+  font-family: "Special Elite", cursive;
+}
+
 header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   color: #fff;
 }
 
 header img,
 header nav {
-  text-align: left;
   color: solid #516fca;
   font-family: "Special Elite", cursive;
   font-size: 1.5rem;
 }
 
 .header-right {
-  flex-direction: row;
   margin-right: 2rem;
 }
 
@@ -29,41 +31,10 @@ header nav a:hover {
 }
 
 .account-box {
+  width: 100%;
+  height: 150%;
   display: flex;
   flex-direction: column;
-  background-color: grey;
-}
-
-/*****
-OLD RUBY STYLES
-******/
-
-header {
-  text-align: justify;
-  color: #fff;
-}
-
-header::after {
-  content: "";
-  display: inline-block;
-  width: 100%;
-}
-header img,
-header nav {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: left;
-  color: solid #516fca;
-  font-family: "Special Elite", cursive;
-  font-size: 1.5rem;
-}
-
-header nav {
-  margin-right: 2rem;
-}
-
-header nav a:hover {
-  background-color: #92e0e1;
 }
 
 h1 {

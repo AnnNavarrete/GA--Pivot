@@ -1,5 +1,5 @@
 import React from "react";
-import { Pie } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import "chartjs-plugin-colorschemes";
 
 export default class Chart extends React.Component {
@@ -22,7 +22,7 @@ export default class Chart extends React.Component {
     const res = await fetch(url);
     const body = await res.json();
     const labels = body.accounts.map(account => account.name);
-    const data = body.accounts.map(account => account.total);
+    const data = body.accounts.map(account => Math.abs(account.total));
     this.setState({
       data: {
         labels,
@@ -38,8 +38,8 @@ export default class Chart extends React.Component {
 
   render() {
     return (
-      <div className="chart">
-        <Pie
+      <div className="bar-chart">
+        <Bar
           data={this.state.data}
           options={{
             legend: { display: false },
