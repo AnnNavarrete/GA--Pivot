@@ -22,9 +22,9 @@ class App extends React.Component {
     return (
       <Router>
         <Header />
+        <Route path="/dashboard" exactly component={Dashboard} />
         <Route path="/bankstatement/" component={BankStatement} />
         <Route path="/account/" component={Account} />
-        <Route path="/*" component={Dashboard} />
       </Router>
     );
   }

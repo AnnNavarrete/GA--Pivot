@@ -1,8 +1,8 @@
 import React from "react";
-import { Bar } from "react-chartjs-2";
+import { Pie } from "react-chartjs-2";
 import "chartjs-plugin-colorschemes";
 
-export default class BarChart extends React.Component {
+export default class PieChart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,8 +38,8 @@ export default class BarChart extends React.Component {
 
   render() {
     return (
-      <div className="bar-chart">
-        <Bar
+      <div className="pie-chart">
+        <Pie
           data={this.state.data}
           options={{
             legend: { display: false },

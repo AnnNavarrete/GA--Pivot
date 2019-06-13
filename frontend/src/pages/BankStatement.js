@@ -1,6 +1,7 @@
 import React from "react";
 import LineItem from "../components/LineItem";
-import AccountChart from "../components/AccountChart";
+import BankChart from "../components/BankChart";
+import PieChart from "../components/PieChart";
 
 async function getBankStatement() {
   const response = await fetch(
@@ -20,7 +21,7 @@ export default class BankStatement extends React.Component {
     this.fetchData = this.fetchData.bind(this);
   }
   state = {
-    name: "Annie Are You Ok?!",
+    // name: "Annie Are You Ok?!",
     bankstatement: { items: [] },
     accountCodes: [],
     chartOfAccounts: []
@@ -52,9 +53,10 @@ export default class BankStatement extends React.Component {
         <table>
           <thead>
             <tr>
-              <th>date</th>
-              <th>description</th>
-              <th>amount</th>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Account Type</th>
               <th />
             </tr>
           </thead>
@@ -71,7 +73,7 @@ export default class BankStatement extends React.Component {
             ))}
           </tbody>
         </table>
-        <AccountChart accountCodes={this.state.accountCodes} />
+        <BankChart accountCodes={this.state.accountCodes} />
       </div>
     );
   }
