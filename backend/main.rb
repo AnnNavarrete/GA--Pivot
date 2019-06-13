@@ -45,7 +45,7 @@ post '/registrations' do
   user.save
   # signs in automatically and redirect to dashboard
   session[:user_id] = user.id
-  redirect '/users/home'
+  redirect '/dashboard'
 end
 
 get '/sessions/login' do
@@ -56,7 +56,7 @@ post '/sessions/login' do
   @user = User.find_by(email: params[:email])
   if @user && @user.authenticate(params[:password])
     session[:user_id] = @user.id
-    redirect '/users/home'
+    redirect '/dashboard'
   else
     erb :'/sessions/login'
   end
@@ -78,7 +78,7 @@ put '/users/:id' do
   user.email = params[:email]
   user.password = params[:password] 
   user.save
-  redirect '/users/home'
+  redirect '/dashboard'
 end
 
 get '/sessions/logout' do

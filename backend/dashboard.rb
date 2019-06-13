@@ -21,12 +21,12 @@ get '/bankstatement' do
     redirect '/'
   end
 
-  url = "https://hxf4w1fe64.execute-api.ap-southeast-2.amazonaws.com/dev/bankstatement"
-  response = HTTParty.get(url)
-  result = JSON.parse(response.body, symbolize_names: true)
-  @items = result[:items]
-  @chart_of_accounts = ChartOfAccount.all
-  erb :bankstatement
+  # url = "https://hxf4w1fe64.execute-api.ap-southeast-2.amazonaws.com/dev/bankstatement"
+  # response = HTTParty.get(url)
+  # result = JSON.parse(response.body, symbolize_names: true)
+  # @items = result[:items]
+  # @chart_of_accounts = ChartOfAccount.all
+  erb :'/users/home'
 end
 
 post '/bankstatement' do
@@ -41,23 +41,23 @@ post '/bankstatement' do
   redirect '/bankstatement'
 end
 
-get '/users/home' do
+get '/dashboard' do
   # route is responsible for rendering the user's homepage view
   if current_user == nil
    redirect '/sessions/login'
   end
-  @account_codes = AccountCode.all.map { |account| 
-    {
-      name: account.name,
-      amount: account.chart_of_accounts.map { |chart| 
-        chart.ledgers.where(user_id: current_user.id).sum(:amount)
-      }.sum
-    }
-  }
+  # @account_codes = AccountCode.all.map { |account| 
+  #   {
+  #     name: account.name,
+  #     amount: account.chart_of_accounts.map { |chart| 
+  #       chart.ledgers.where(user_id: current_user.id).sum(:amount)
+  #     }.sum
+  #   }
+  # }
 
-  @bank_balance = @account_codes.map { |account| account[:amount] }.sum.round(2)
+  # @bank_balance = @account_codes.map { |account| account[:amount] }.sum.round(2)
 
-  @user = current_user
+  # @user = current_user
   erb :'/users/home'
 end
 
