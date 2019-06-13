@@ -9,7 +9,7 @@ export default class AccountChart extends React.Component {
         <Link to={`/user/account/${account.name}`}>
           {account.name}: {account.amount}
         </Link>
-        <BarChart chartType={account.name} />
+        <BarChart data={account} />
       </div>
     ));
   }

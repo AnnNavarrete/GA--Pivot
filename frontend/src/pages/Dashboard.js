@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
-import AccountChart from "../components/AccountChart";
+import BarChart from "../components/BarChart";
 
 export default class Dashboard extends React.Component {
   constructor() {
@@ -28,7 +28,12 @@ export default class Dashboard extends React.Component {
         <h1>"Welcome to your finance tracker, {this.state.user}"</h1>
         <div className="account-codes">
           <div className="chart-container">
-            <AccountChart accountCodes={this.state.accountCodes} />
+            <BarChart
+              labels={this.state.accountCodes.map(
+                x => `${x.name}: $${Math.abs(x.amount)}`
+              )}
+              data={this.state.accountCodes.map(x => Math.abs(x.amount))}
+            />
           </div>
           <div className="main-accounts">
             <span>Bank Balance: {this.state.bank_balance} </span>

@@ -40,6 +40,7 @@ export default class PieChart extends React.Component {
     return (
       <div className="pie-chart">
         <Pie
+          redraw
           data={this.state.data}
           options={{
             legend: { display: false },
