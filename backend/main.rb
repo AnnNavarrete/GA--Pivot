@@ -10,9 +10,6 @@ require_relative 'models/account_code'
 require_relative 'dashboard'
 
 enable :sessions
-before "*" do
-  session[:user_id] = 1
-end
 
 helpers do
   def static_file(name)
