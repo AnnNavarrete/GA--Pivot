@@ -1,25 +1,16 @@
 header {
-  text-align: justify;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: #fff;
+  margin-right: 2rem;
 }
 
-header::after {
-  content: "";
-  display: inline-block;
-  width: 100%;
-}
 header img,
 header nav {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: left;
   color: solid #516fca;
   font-family: "Special Elite", cursive;
   font-size: 1.5rem;
-}
-
-header nav {
-  margin-right: 2rem;
 }
 
 header nav a:hover {
@@ -56,7 +47,7 @@ h1 {
   margin: 0;
 }
 
-.header-user {
+/* .header-user {
   overflow: hidden;
   background-color: white;
 }
@@ -77,7 +68,7 @@ h1 {
 .header-user a:hover {
   background-color: grey;
   color: lightgrey;
-}
+} */
 
 .account-codes {
   display: flex;
@@ -129,7 +120,7 @@ h1 {
   font-size: 1.8rem;
 }
 
-.header-logo a {
+/* .header-logo a {
   float: left;
   color: grey;
   text-align: center;
@@ -140,4 +131,4 @@ h1 {
   border-radius: 4px;
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
+} */

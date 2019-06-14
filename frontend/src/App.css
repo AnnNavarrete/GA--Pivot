@@ -1,5 +1,6 @@
 body {
   font-family: "Quicksand", sans-serif;
+  margin-right: 2rem;
 }
 
 header {
@@ -14,10 +15,6 @@ header nav {
   color: solid #516fca;
   font-family: "Special Elite", cursive;
   font-size: 1.5rem;
-}
-
-.header-right {
-  margin-right: 2rem;
 }
 
 header nav a:hover {
@@ -73,7 +70,7 @@ h1 {
   margin: 0;
 }
 
-.header-user {
+/* .header-user {
   overflow: hidden;
   background-color: white;
 }
@@ -94,7 +91,7 @@ h1 {
 .header-user a:hover {
   background-color: grey;
   color: lightgrey;
-}
+} */
 
 .account-codes {
   display: flex;
