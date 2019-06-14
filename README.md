@@ -1,9 +1,25 @@
-# Getting started
+# Pivot - Personal Finance Tracker
 
-# Deploying to Heroku
+Github Repository:
 
-In a terminal, run:
+https://pages.git.generalassemb.ly/AnnNavarrete/Pivot/
 
-1. `./build.sh`
-2. Commit any changes
-3. `./deploy.sh`
+Heroku App:
+
+https://pivot-finance.herokuapp.com/
+
+## Getting Started
+
+This is a simple personal finance tracker, to track your income and expenses.
+
+Sign up to get started and see your dashboard.
+
+## Built With
+
+- Ruby
+- Sinatra
+- Postgres
+- Javascript
+- React
+- Chart.js
+- AWS Lambda
