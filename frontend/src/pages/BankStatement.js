@@ -46,7 +46,6 @@ export default class BankStatement extends React.Component {
     await this.fetchData();
   }
 
-  // the below is what get showen in the web page!
   render() {
     return (
       <div>
@@ -73,7 +72,9 @@ export default class BankStatement extends React.Component {
             ))}
           </tbody>
         </table>
-        <BankChart accountCodes={this.state.accountCodes} />
+        <div className="bank-chart">
+          <BankChart accountCodes={this.state.accountCodes} />
+        </div>
       </div>
     );
   }

@@ -36,8 +36,12 @@ export default class Dashboard extends React.Component {
             />
           </div>
           <div className="main-accounts">
-            <span>Bank Balance: {this.state.bank_balance} </span>
-            <Link to="/bankstatement">Reconcile Bank Statement</Link>
+            <span className="balance">
+              Bank Balance: {this.state.bank_balance}{" "}
+            </span>
+            <span className="bankrecs">
+              <Link to="/bankstatement">Reconcile Bank Statement</Link>
+            </span>
           </div>
         </div>
       </div>

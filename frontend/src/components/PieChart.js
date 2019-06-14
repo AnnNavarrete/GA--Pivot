@@ -1,5 +1,5 @@
 import React from "react";
-import { Pie } from "react-chartjs-2";
+import { Pie, Bar } from "react-chartjs-2";
 import "chartjs-plugin-colorschemes";
 
 export default class PieChart extends React.Component {
@@ -43,7 +43,8 @@ export default class PieChart extends React.Component {
           redraw
           data={this.state.data}
           options={{
-            legend: { display: false },
+            maintainAspectRatio: false,
+            // legend: { display: false },
             plugins: {
               colorschemes: {
                 scheme: "brewer.Paired12"
